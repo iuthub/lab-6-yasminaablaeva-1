@@ -11,14 +11,14 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	$pattern=$_POST["pattern"];
 	$text=$_POST["text"];
 	$replaceText=$_POST["replaceText"];
-
-	$replacedText=preg_replace($pattern, $replaceText, $text);
+    // $replacedText = preg_replace($pattern, $replaceText, $text);
+    $replacedText = "AF";
 
 	if(preg_match($pattern, $text)) {
-						$match="Match!";
-					} else {
-						$match="Does not match!";
-					}
+        $match="Match!";
+    } else {
+        $match="Does not match!";
+    }
 }
 
 ?>
@@ -31,16 +31,16 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	<title>Valid Form</title>
 </head>
 <body>
-	<form action="regex_valid_form.php" method="post">
+	<form style="width: 400px; margin: 15% auto;" action="regex_valid_form.php" method="post">
 		<dl>
 			<dt>Pattern</dt>
-			<dd><input type="text" name="pattern" value="<?= $pattern ?>"></dd>
+			<dd><input style="width: 100%; min-height: 20px" type="text" name="pattern" value="<?= $pattern ?>"></dd>
 
 			<dt>Text</dt>
-			<dd><input type="text" name="text" value="<?= $text ?>"></dd>
+            <dd><textarea style="width: 100%; min-height: 20px" name="text" rows="6"><?= $text ?></textarea></dd>
 
 			<dt>Replace Text</dt>
-			<dd><input type="text" name="replaceText" value="<?= $replaceText ?>"></dd>
+			<dd><input style="width: 100%; min-height: 20px" type="text" name="replaceText" value="<?= $replaceText ?>"></dd>
 
 			<dt>Output Text</dt>
 			<dd><?=	$match ?></dd>
