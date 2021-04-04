@@ -24,3 +24,15 @@ input[type="submit"] {
     font-size: 2em;
     width: 100%;
 }
+
+input[type="text"] {
+    width: calc(100% - 40px);
+    height: 20px;
+}
+.valid p, .invalid p {
+    margin: 4px 0 10px 0;
+    color: red;
+}
+.valid p {
+    display: none;
+}
